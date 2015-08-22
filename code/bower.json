@@ -1,0 +1,13 @@
+{
+  "name": "ld33",
+  "version": "1.0.0",
+  "authors": [
+    "Michael Miriti <michael@miriti.ru>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": "~2.1.20",
+    "pixi.js": "~3.0.7"
+  }
+}
