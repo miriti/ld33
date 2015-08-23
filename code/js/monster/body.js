@@ -48,9 +48,19 @@ define([
         pivot = pivot || this.getAvailablePivot(type);
 
         if (pivot != null) {
+            if (pivot.part != null) {
+                pivot.part.parent.removeChild(pivot.part);
+            }
             pivot.part = part;
-            pivot.layer.addChild(part);
-            
+
+            var shim = new Base.GameObject();
+
+            shim.x = pivot.x;
+            shim.y = pivot.y;
+            shim.addChild(part);
+            pivot.layer.addChild(shim);
+
+            part.setNum(this.pivots[type].indexOf(pivot));
             part.bodyPivot = pivot;
         }
     };

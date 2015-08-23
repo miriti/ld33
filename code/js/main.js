@@ -9,15 +9,11 @@ require([
     'res',
     'game',
     'menu',
-    'terrorize',
-    'road',
-    'scroll'], function (PIXI,
-                         Res,
-                         Game,
-                         Menu,
-                         Terrorize,
-                         Road,
-                         Scroll) {
+    'sound'], function (PIXI,
+                        Res,
+                        Game,
+                        Menu,
+                        Sound) {
 
     var renderer = new PIXI.WebGLRenderer(800, 600);
     renderer.backgroundColor = 0x222222;
@@ -43,6 +39,7 @@ require([
     render();
 
     Res.go(function () {
-        game.setState(new Terrorize());
+        Sound.init();
+        game.setState(new Menu());
     });
 });

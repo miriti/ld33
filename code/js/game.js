@@ -4,6 +4,7 @@ define(['base'], function (Base) {
 
         this.interactive = true;
         this.currentState = null;
+        this.founds = 200;
 
         Game.instance = this;
     };

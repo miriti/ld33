@@ -8,13 +8,10 @@ define([
 
     var Head = function () {
         BodyPart.call(this);
-
-        var sprite = new PIXI.Sprite(Res.head.texture);
-        sprite.pivot.set(45, 115);
-
-        this.addChild(sprite);
-
+        
+        this.eyes_pos = [];
         this._swingPhase = 0;
+        this.type = 'head';
     };
 
     ext(Head, BodyPart);

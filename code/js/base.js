@@ -1,4 +1,9 @@
-define(['pixi'], function (PIXI) {
+define([
+    'pixi',
+    'res',
+    'sound'], function (PIXI,
+                        Res,
+                        Sound) {
     var GameObject = function () {
         PIXI.Container.call(this);
     };
@@ -40,6 +45,7 @@ define(['pixi'], function (PIXI) {
         this.buttonMode = true;
 
         this.mouseover = function () {
+            Sound.bip_1.play();
             this.scale.set(1.2);
         };
 

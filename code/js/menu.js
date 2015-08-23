@@ -10,8 +10,9 @@ define([
     var Menu = function () {
         Base.GameObject.call(this);
 
-        var logo = new PIXI.GameSprite(Res.logo.texture);
-        logo.y = -100;
+        var logo = new PIXI.Text("Freak Craft", {font: "160px Creepster", fill: "#eee", align: "center"});
+        logo.anchor.set(0.5, 0);
+        logo.y = -200;
 
         var startButton = new Base.Button(Res.start_btn.texture, function () {
             Game.instance.setState(new Lair());

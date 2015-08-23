@@ -2,6 +2,10 @@ define(['base'], function (Base) {
     var BodyPart = function () {
         Base.GameObject.call(this);
         this._pivot = null;
+        this.type = 'none';
+        this.price = 0;
+        this.scareFactor = 0;
+        this.bought = false;
     };
 
     ext(BodyPart, Base.GameObject);
@@ -10,14 +14,16 @@ define(['base'], function (Base) {
         bodyPivot: {
             set: function (pivot) {
                 this._pivot = pivot;
-                this.x = pivot.x;
-                this.y = pivot.y;
             },
             get: function () {
                 return this._pivot;
             }
         }
     });
-    
+
+    BodyPart.prototype.setNum = function (num) {
+
+    };
+
     return BodyPart;
 });
